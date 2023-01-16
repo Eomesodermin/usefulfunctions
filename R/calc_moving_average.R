@@ -9,9 +9,10 @@
 #' @param n The number of values to average over
 #' @param centered Whether to center the average
 #' @return A vector of the same length as x
-#' @export
 #' @examples
 #' calc.moving.average(c(1,2,3,4,5), n=3)
+#' @export
+
 
 calc.moving.average <- function(x, n = 1, centered = FALSE) {
   

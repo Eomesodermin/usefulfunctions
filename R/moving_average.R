@@ -4,7 +4,6 @@
 #' 
 #' 
 #' @importFrom cgdsr CGDS getProfileData
-#' @importFrom usefulfunctions calc.moving.average
 #' 
 #' @param tcga.datasets A vector of TCGA datasets to use for the analysis.
 #' @param output.dir The directory to save the output files.
