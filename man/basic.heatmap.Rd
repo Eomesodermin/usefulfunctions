@@ -42,7 +42,7 @@ heatmap
 Heatmap function
 }
 \examples{
-basic.heatmap(df, 
+basic.heatmap(df,
              Col.cluster = FALSE,
              Row.cluster = FALSE,
              title.var = "",

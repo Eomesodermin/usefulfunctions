@@ -4,7 +4,7 @@
 \alias{convert.mouse.to.human}
 \title{Convert Mouse genes to human genes}
 \usage{
-convert.mouse.to.human(mouse.genes)
+convert.mouse.to.human(c("Gzma", "Gzmb", "Xcl1"))
 }
 \arguments{
 \item{x}{a character vector of mouse gene names}

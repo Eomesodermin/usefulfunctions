@@ -1,11 +1,8 @@
 #' @title Basic Heatmap function
 #' @author Dillon corvino
 #' @description Heatmap function
-#' 
-#' @importFrom stats dist hclust
-#' @importFrom grDevices colorRampPalette
-#' @importFrom gplots heatmap.2
-#' 
+#'
+#'
 #' @param df dataframe
 #' @param Col.cluster logical should columns be clustered
 #' @param Row.cluster logical should rows be clustered
@@ -16,9 +13,9 @@
 #' @param dist.method character for which distance metric to use available options are "euclidean", "maximum", "manhattan", "canberra", "binary"
 #' @param hclust.method character for which cluster metric to use available options are "ward.D2", "single", "complete", "average", "mcquitty", "median", "centroid"
 #' @return heatmap
-#' 
+#'
 #' @examples
-#' basic.heatmap(df, 
+#' basic.heatmap(df,
 #'              Col.cluster = FALSE,
 #'              Row.cluster = FALSE,
 #'              title.var = "",
@@ -29,7 +26,7 @@
 #' @export
 
 
-basic.heatmap <- function(df, 
+basic.heatmap <- function(df,
                           Col.cluster = FALSE,
                           Row.cluster = FALSE,
                           title.var = "",
@@ -38,23 +35,23 @@ basic.heatmap <- function(df,
                           scale.var = "row",
                           dist.method = "euclidean",
                           hclust.method = "ward.D"){
-  
+
   dissimfun <- function(x) {
     dist(x, method = paste0(dist.method))
   }
-  
+
   clusterfun <- function(x) {
-    hclust(x, method = paste0(hclust.method)) 
+    hclust(x, method = paste0(hclust.method))
   }
-  
-  
+
+
   gplots::heatmap.2(as.matrix(log2(df + 1)),
                     col = grDevices::colorRampPalette(c("blue", "white", "red"))(100), #turquoise
                     scale = scale.var,
-                    na.rm = TRUE, 
+                    na.rm = TRUE,
                     trace = "none",
                     Rowv = Row.cluster,
-                    Colv = Col.cluster, 
+                    Colv = Col.cluster,
                     distfun = dissimfun,
                     hclustfun = clusterfun,
                     dendrogram = "both",
@@ -63,11 +60,11 @@ basic.heatmap <- function(df,
                     cexRow = row.size,
                     main = title.var,
                     key = TRUE,
-                    keysize = 1.3, 
+                    keysize = 1.3,
                     na.color = "yellow",
-                    sepcolor = "black", 
-                    colsep = colsepvar, 
+                    sepcolor = "black",
+                    colsep = colsepvar,
                     srtCol = 90)
-  
+
 }
 

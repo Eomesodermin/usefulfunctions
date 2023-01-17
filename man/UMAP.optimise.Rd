@@ -33,9 +33,9 @@ Numerous .pdf files are exported and saved to the desired output.dir
 This function will calculate UMAP for a range of min.dist and n.neighbor values.
 }
 \examples{
-UMAP.optimise(input.seurat = pbmc_small, 
-             output.dir = NULL, 
-             init.min.dist = 0.001, 
+UMAP.optimise(input.seurat = pbmc_small,
+             output.dir = NULL,
+             init.min.dist = 0.001,
              init.neigh = 5,
              min.dist.step = 2,
              neigh.step = 20)

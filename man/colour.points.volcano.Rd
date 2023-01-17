@@ -58,24 +58,24 @@ top_n(-10, logFC)
 # combine vectors
 goi <- unique(c(rownames(goi.up), rownames(goi.dn)))
 
-keyvals <- colour.points.volcano(volcano.data, 
+keyvals <- colour.points.volcano(volcano.data,
                                  highlight.selected = TRUE,
                                  selected.cols = c("Green", "Orange"),
                                  highlight.genes = goi)
 
-size.vec <- size.points.volcano(volcano.data, 
+size.vec <- size.points.volcano(volcano.data,
                                 highlight.genes = goi)
 
-alpha.vec <- alpha.points.volcano(volcano.data, 
+alpha.vec <- alpha.points.volcano(volcano.data,
                                   highlight.genes = goi)
-                        
-                        
-custom.enhanced.volcano(volcano.data, 
-                       selectLab = goi, 
-                       pointSize = size.vec, 
-                       colAlpha = alpha.vec, 
-                       colCustom = keyvals, 
-                       FCcutoff = 1, 
+
+
+custom.enhanced.volcano(volcano.data,
+                       selectLab = goi,
+                       pointSize = size.vec,
+                       colAlpha = alpha.vec,
+                       colCustom = keyvals,
+                       FCcutoff = 1,
                        title = "Spleen_Pos_vs_Neg_Manuscript")
 }
 \author{
