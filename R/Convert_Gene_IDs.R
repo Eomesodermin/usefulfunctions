@@ -22,9 +22,9 @@ convert.mouse.to.human <- function(genes, use.jax = FALSE){
     output.df = c()
 
     for(gene.i in genes){
-      class_key = (mouse_human_genes %>% filter(Symbol == gene.i & Common.Organism.Name=="mouse, laboratory"))[['DB.Class.Key']]
+      class_key = (mouse_human_genes %>% dplyr::filter(.data$Symbol == gene.i & .data$Common.Organism.Name=="mouse, laboratory"))[['DB.Class.Key']]
       if(!identical(class_key, integer(0)) ){
-        human_genes = (mouse_human_genes %>% filter(DB.Class.Key == class_key & Common.Organism.Name=="human"))[,"Symbol"]
+        human_genes = (mouse_human_genes %>% dplyr::filter(.data$DB.Class.Key == class_key & .data$Common.Organism.Name=="human"))[,"Symbol"]
         for(human_gene in human_genes){
           output.df = append(output.df, human_gene)
         }
@@ -80,14 +80,14 @@ convert.mouse.to.human <- function(genes, use.jax = FALSE){
 convert.human.to.mouse <- function(genes, use.jax = FALSE){
   if(use.jax){
 
-    mouse_human_genes = read.csv("http://www.informatics.jax.org/downloads/reports/HOM_MouseHumanSequence.rpt",sep="\t")
+    mouse_human_genes = utils::read.csv("http://www.informatics.jax.org/downloads/reports/HOM_MouseHumanSequence.rpt",sep="\t")
 
     output.df = c()
 
     for(gene.i in genes){
-      class_key = (mouse_human_genes %>% filter(Symbol == gene.i & Common.Organism.Name=="human"))[['DB.Class.Key']]
+      class_key = (mouse_human_genes %>% dplyr::filter(.data$Symbol == gene.i & .data$Common.Organism.Name=="human"))[['DB.Class.Key']]
       if(!identical(class_key, integer(0)) ){
-        mouse_genes = (mouse_human_genes %>% filter(DB.Class.Key == class_key & Common.Organism.Name=="mouse, laboratory"))[,"Symbol"]
+        mouse_genes = (mouse_human_genes %>% dplyr::filter(.data$DB.Class.Key == class_key & .data$Common.Organism.Name=="mouse, laboratory"))[,"Symbol"]
         for(mouse_gene in mouse_genes){
           output.df = append(output.df, mouse_gene)
         }
