@@ -4,10 +4,12 @@
 \alias{convert.mouse.to.human}
 \title{Convert Mouse genes to human genes}
 \usage{
-convert.mouse.to.human(c("Gzma", "Gzmb", "Xcl1"))
+convert.mouse.to.human(x = c("Gzma", "Gzmb", "Xcl1"))
 }
 \arguments{
-\item{x}{a character vector of mouse gene names}
+\item{genes}{a character vector of mouse gene names}
+
+\item{use.jax}{logic variable to convert genes using data from jax website, to use incase connection error with ensemble}
 }
 \value{
 a data frame with mouse and human gene names
@@ -16,7 +18,7 @@ a data frame with mouse and human gene names
 Convert Mouse genes to human genes
 }
 \examples{
-convert.mouse.to.human(c("Gzma", "Gzmb", "Xcl1"))
+convert.mouse.to.human(genes = c("Gzma", "Gzmb", "Xcl1"))
 
 }
 \author{

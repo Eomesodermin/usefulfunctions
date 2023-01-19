@@ -6,7 +6,7 @@
 \usage{
 alpha.points.volcano(
   input.data,
-  highlight.genes = goi,
+  highlight.genes = "NKG7",
   baseline.alpha = 0.1,
   highlight.alpha = 1
 )

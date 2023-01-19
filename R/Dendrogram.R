@@ -50,7 +50,7 @@ dendrogram <- function(data.matrix,
 
   x <- stats::as.dendrogram(res.hc)
 
-  pdf(paste0(output.path, "Dendrogram.pdf"))
+  pdf(paste0(output.dir, "Dendrogram.pdf"))
 
   print(factoextra::fviz_dend(x,
                   show_labels = TRUE,
@@ -67,7 +67,7 @@ dendrogram <- function(data.matrix,
 
 
   if(!is.null(type.var)){
-  pdf(paste0(output.path, "Dendrogram_", type.var, ".pdf"))
+  pdf(paste0(output.dir, "Dendrogram_", type.var, ".pdf"))
 
   print(plot(ape::as.phylo(res.hc),
              type = type.var,

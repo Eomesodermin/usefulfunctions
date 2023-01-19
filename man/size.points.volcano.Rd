@@ -6,7 +6,7 @@
 \usage{
 size.points.volcano(
   input.data,
-  highlight.genes = goi,
+  highlight.genes = "NKG7",
   baseline.size = 5,
   highlight.size = 5
 )

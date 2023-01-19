@@ -2,10 +2,9 @@
 "_PACKAGE"
 
 ## usethis namespace: start
+#' @import ggplot2
 #' @import org.Hs.eg.db
 #' @import org.Mm.eg.db
-#' @import ggplot2
-#' @importFrom magrittr "%>%"
 #' @importFrom ape as.phylo
 #' @importFrom biomaRt getLDS
 #' @importFrom biomaRt useMart
@@ -19,6 +18,9 @@
 #' @importFrom factoextra eclust
 #' @importFrom factoextra fviz_dend
 #' @importFrom forcats fct_reorder
+#' @importFrom ggalt geom_encircle
+#' @importFrom ggrepel geom_label_repel
+#' @importFrom ggrepel geom_text_repel
 #' @importFrom gplots heatmap.2
 #' @importFrom graphics abline
 #' @importFrom graphics axis
@@ -26,6 +28,9 @@
 #' @importFrom graphics lines
 #' @importFrom graphics mtext
 #' @importFrom graphics par
+#' @importFrom graphics plot
+#' @importFrom graphics points
+#' @importFrom graphics text
 #' @importFrom graphics title
 #' @importFrom grDevices col2rgb
 #' @importFrom grDevices colorRampPalette
@@ -33,6 +38,9 @@
 #' @importFrom grDevices dev.off
 #' @importFrom grDevices pdf
 #' @importFrom grDevices rgb
+#' @importFrom magrittr "%>%"
+#' @importFrom plyr desc
+#' @importFrom rlang .data
 #' @importFrom scico scico
 #' @importFrom Seurat NoLegend
 #' @importFrom Seurat RunUMAP
@@ -43,7 +51,9 @@
 #' @importFrom stats hclust
 #' @importFrom stats median
 #' @importFrom stats p.adjust
-#' @importFrom tidyr as_tibble
+#' @importFrom stats quantile
+#' @importFrom tibble as_tibble
 #' @importFrom utils head
+#' @importFrom utils write.csv
 ## usethis namespace: end
 NULL

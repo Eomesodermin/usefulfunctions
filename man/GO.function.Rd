@@ -35,10 +35,6 @@ Function will find GO terms enriched in the list of up or downregulated genes
 input requires a column "gene" and a column "FDR"
 gene should be as SYMBOL
 }
-\examples{
-GO.function(markers = markers, topn = 1000, org = "human", title.var = "GO enrichment")
-
-}
 \author{
 Dillon Corvino wrote the wrapper for clusterProfiler function
 }

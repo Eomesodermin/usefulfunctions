@@ -2,24 +2,26 @@
 % Please edit documentation in R/makeTransparent_colour.R
 \name{makeTransparent}
 \alias{makeTransparent}
-\title{Make a color transparent}
+\title{makeTransparent}
 \usage{
-makeTransparent("red", "blue", alpha=0.8)
+makeTransparent(color, percent = 50, name = NULL)
 }
 \arguments{
-\item{...}{a color}
+\item{color}{a color e.g "red"}
 
-\item{alpha}{a number between 0 and 1}
+\item{percent}{a number between 0 and 100 indicating percentage transparent}
+
+\item{name}{an optional name for the color}
 }
 \value{
-a color
+a new color with transparency
 }
 \description{
 Make a color transparent
 }
 \examples{
-makeTransparent("red", alpha=0.5)
-makeTransparent(rgb(0,0,0,0.5))
+makeTransparent(color = "red", percent = 50, name = NULL)
+
 }
 \author{
 Ricardo Oliveros-Ramos https://stackoverflow.com/questions/8047668/transparent-equivalent-of-given-color

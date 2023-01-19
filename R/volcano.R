@@ -53,11 +53,11 @@ clean.data.volcano <- function(input.data, sig.only = TRUE){
 
   if(sig.only){
     output.data <- input.data %>%
-      dplyr::filter(FDR < 0.05) %>%
-      dplyr::select(FDR, logFC)
+      dplyr::filter(.data$FDR < 0.05) %>%
+      dplyr::select(.data$FDR, .data$logFC)
   }else{
     output.data <- input.data %>%
-      dplyr::select(FDR, logFC)
+      dplyr::select(.data$FDR, .data$logFC)
   }
   return(output.data)
 }
@@ -130,7 +130,7 @@ colour.points.volcano <- function(volcano.data,
                           decreased.col = "Blue",
                           highlight.selected = FALSE,
                           selected.cols = c("Green", "Orange"),
-                          highlight.genes = goi,
+                          highlight.genes = "NKG7",
                           FDR.cutoff = 0.05,
                           logFC.cutoff = 1){
 
@@ -221,7 +221,7 @@ colour.points.volcano <- function(volcano.data,
 
 
 alpha.points.volcano <- function(input.data,
-                         highlight.genes = goi,
+                         highlight.genes = "NKG7",
                          baseline.alpha = 0.1,
                          highlight.alpha = 1){
 
@@ -283,7 +283,7 @@ alpha.points.volcano <- function(input.data,
 
 
 size.points.volcano <- function(input.data,
-                        highlight.genes = goi,
+                        highlight.genes = "NKG7",
                         baseline.size = 5,
                         highlight.size = 5){
 
@@ -434,7 +434,6 @@ custom.enhanced.volcano <- function(toptable,
                                     cutoffLineType = "longdash",
                                     cutoffLineCol = "black",
                                     cutoffLineWidth = 0.4,
-
                                     pointSize = 5,
                                     labSize = 4,
                                     labCol = "black",

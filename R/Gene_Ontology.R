@@ -17,9 +17,6 @@
 #'
 #' @return if plot is TRUE, return a plot, if plot is FALSE, return a dataframe
 #'
-#' @examples
-#' GO.function(markers = markers, topn = 1000, org = "human", title.var = "GO enrichment")
-#'
 #' @export
 
 
@@ -34,9 +31,9 @@ GO.function <- function(markers,
 
 
   gene_list <- markers %>%
-    arrange(FDR) %>%
+    dplyr::arrange(.data$FDR) %>%
     head(topn) %>%
-    pull(gene)
+    dplyr::pull(.data$gene)
 
   if(org == "human"){
     db <- org.Hs.eg.db::org.Hs.eg.db
@@ -48,11 +45,11 @@ GO.function <- function(markers,
                                    keyType = "SYMBOL", ...)
 
   df <- tibble::as_tibble(res@result) %>%
-    dplyr::arrange(p.adjust) %>%
+    dplyr::arrange(.data$p.adjust) %>%
     head(10) %>%
-    dplyr::mutate(Description = as.factor(Description)) %>%
-    dplyr::mutate(Description = forcats::fct_reorder(Description,
-                                                     dplyr::desc(p.adjust)))
+    dplyr::mutate(Description = as.factor(.data$Description)) %>%
+    dplyr::mutate(Description = forcats::fct_reorder(.data$Description,
+                                                     dplyr::desc(.data$p.adjust)))
 
 
   if(plot){

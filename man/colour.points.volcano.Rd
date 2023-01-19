@@ -10,7 +10,7 @@ colour.points.volcano(
   decreased.col = "Blue",
   highlight.selected = FALSE,
   selected.cols = c("Green", "Orange"),
-  highlight.genes = goi,
+  highlight.genes = "NKG7",
   FDR.cutoff = 0.05,
   logFC.cutoff = 1
 )
