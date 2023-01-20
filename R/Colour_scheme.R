@@ -11,7 +11,7 @@
 
 Get.batlow <- function(){
 
-  batlow.pal <- scico(100, palette = 'batlow')
+  assign("batlow.pal", scico(100, palette = 'batlow'), envir = .GlobalEnv)
 
 }
 
