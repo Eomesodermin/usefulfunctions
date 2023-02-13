@@ -13,6 +13,7 @@
 #' @param org character for which organism the genes come from either "human" or "mouse"
 #' @param title.var character to use as title of the plot
 #' @param plot logical, if TRUE, plot the result, if FALSE, return the result
+#' @param ontology.type string for which ontology type to assess one of either "BP", "MF", or "CC"
 #' @param ... other parameters to be passed to enrichGO function
 #'
 #' @return if plot is TRUE, return a plot, if plot is FALSE, return a dataframe
@@ -26,6 +27,7 @@ GO.function <- function(markers,
                         org = "human",
                         title.var = "",
                         plot = TRUE,
+                        ontology.type = "BP",
                         ...){
 
 
@@ -42,6 +44,7 @@ GO.function <- function(markers,
 
   res <- clusterProfiler::enrichGO(gene = gene_list,
                                    OrgDb = db,
+                                   ont = ontology.type,
                                    keyType = "SYMBOL", ...)
 
   df <- tibble::as_tibble(res@result) %>%

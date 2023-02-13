@@ -64,9 +64,8 @@ probeCor.test <- function(em, gp, method = "pearson") {
 sc.correlation <- function(data.slot,
                            goi = "NKG7",
                            remove.quantile = 0.3,
-                           output.tables = "results/tables/Correlation_analysis/"){
-
-
+                           output.tables = "results/tables/Correlation_analysis/",
+                           debug.mode = FALSE){
 
 
   # Create output directory
