@@ -133,18 +133,6 @@ sc.correlation <- function(data.slot,
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 #' @title Correlation.heatmaps
 #' @description Creates heatmaps of the top correlated genes to a gene of interest, output from sc.correlation function
 #' @param seurat.object Seurat object, should be downsampled and idents and assay set to those of interest
@@ -246,6 +234,8 @@ correlation.heatmaps <- function(seurat.object,
 #'              top.n.val = 30)
 #' @export
 #'
+#' @return plot of correlation analysis
+
 plot.cor.data <- function(cor.df,
                           output.dir = "output/figures/",
                           goi = "NKG7",
@@ -332,6 +322,4 @@ plot.cor.data <- function(cor.df,
 
 
 }
-
-
 

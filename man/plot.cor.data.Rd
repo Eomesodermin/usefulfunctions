@@ -15,6 +15,9 @@
 
 \item{top.n.val}{number of top values to plot}
 }
+\value{
+plot of correlation analysis
+}
 \description{
 Plot correlation data
 }
