@@ -8,7 +8,8 @@ sc.correlation(
   data.slot,
   goi = "NKG7",
   remove.quantile = 0.3,
-  output.tables = "results/tables/Correlation_analysis/"
+  output.tables = "results/tables/Correlation_analysis/",
+  debug.mode = FALSE
 )
 }
 \arguments{

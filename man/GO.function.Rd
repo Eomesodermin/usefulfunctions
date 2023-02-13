@@ -10,6 +10,7 @@ GO.function(
   org = "human",
   title.var = "",
   plot = TRUE,
+  ontology.type = "BP",
   ...
 )
 }
@@ -23,6 +24,8 @@ GO.function(
 \item{title.var}{character to use as title of the plot}
 
 \item{plot}{logical, if TRUE, plot the result, if FALSE, return the result}
+
+\item{ontology.type}{string for which ontology type to assess one of either "BP", "MF", or "CC"}
 
 \item{...}{other parameters to be passed to enrichGO function}
 }
